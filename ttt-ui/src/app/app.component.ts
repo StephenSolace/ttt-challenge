@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   getTitle(): Observable<Title> {
-    const url = "http:\\www.localhost:8080";
+    const url = "http://www.localhost:8080";
     return this.http.get<Title>(url);
   }
 }
