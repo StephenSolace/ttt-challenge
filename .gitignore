@@ -3,7 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-
+node_modules/
+ttt-ui/node_modules/
 ui/node_modules/
 ui/static/
 
