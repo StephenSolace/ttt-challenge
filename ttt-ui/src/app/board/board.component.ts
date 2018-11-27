@@ -38,6 +38,10 @@ export class BoardComponent implements OnInit {
     return false;
   }
 
+  SaveGame(): void {
+    
+  }
+
   PlaceMove(x: number, y: number, player: number): void {
     this.Board[x][y] = player;
 

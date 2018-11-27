@@ -1,0 +1,14 @@
+@import  "../styles.scss";
+
+.header {
+  font-family: Arial, Times, serif;
+  font-weight: bold;
+  background-color: $cream;
+  color: #FFC30F;
+  font-size: 3em;
+  // border-radius: 2em 2em 0em 0em;
+}
+
+.shadowed {
+  box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}

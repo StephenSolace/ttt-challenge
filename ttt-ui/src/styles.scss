@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+$cream: #eedfd7;	
+$tan: #dfb591;
+$salmon: #a15755;
+$rose: #81272e;
+$brown: #351d1b;
+
+body {
+    margin-top: 5%;
+    background-image: linear-gradient(-90deg, $cream, $tan, $salmon);
+  }
+
+  .center {
+    font-family: Arial, Times, serif;
+    font-weight: bold;
+    background-color: #581845;
+    color: #FFC30F;
+    font-size: 4em;
+    min-height: 7em;
+  }
+  
+  .footer {
+    background-color: #FFC30F;
+  }
