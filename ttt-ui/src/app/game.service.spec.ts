@@ -13,6 +13,15 @@ describe('GameService', () => {
     expect(service).toBeTruthy();
   });
 
+  describe("Initialize Game", function () {
+    it('should set the default game values', () => {
+      const service: GameService = TestBed.get(GameService);
+      var id = service.GenerateId(9999999999);
+
+      expect(id).toBeGreaterThan(-1);
+      expect(id).toBeLessThan(9999999999);
+    });
+  });
 
   describe("Id Generation", function () {
     it('should generate a random id', () => {
@@ -23,18 +32,6 @@ describe('GameService', () => {
       expect(id).toBeLessThan(9999999999);
     });
   });
-
-  describe("Player update", function () {
-    it('should be able to update players', () => {
-      const service: GameService = TestBed.get(GameService);
-      service.UpdatePlayer(0, "THAT guy");
-      service.UpdatePlayer(1, "Han Solo");
-      
-      expect(service.game.attributes.players).toEqual(["THAT guy", "Han Solo"]);
-    });
-  });
-
-  // SaveBoard (id: string = null, board: number[][]): Observable<Response>
 
   describe("Board Features", function () {
 

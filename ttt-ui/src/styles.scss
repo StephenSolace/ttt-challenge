@@ -1,23 +1,32 @@
-$cream: #eedfd7;	
-$tan: #dfb591;
-$salmon: #a15755;
-$rose: #81272e;
-$brown: #351d1b;
+$white: #ffffff;	
+$babyBlue: #d0e1f9;
+$jean: #4d648d ;
+$blue: #283655;
+$heavyBlue: #1e1f26;
 
 body {
     margin-top: 5%;
-    background-image: linear-gradient(-90deg, $cream, $tan, $salmon);
+    background-image: url(/assets/battle.jpg);
+    
+    // background-image: linear-gradient(-90deg, $cream, $tan, $salmon);    
+  }
+
+  button {
+    margin-top: .25em;
+    margin-bottom: .25em;
+    background-color: $heavyBlue;
+    color: $white;
   }
 
   .center {
     font-family: Arial, Times, serif;
     font-weight: bold;
-    background-color: #581845;
-    color: #FFC30F;
+    background-color: $blue;
+    color: $heavyBlue;
     font-size: 4em;
     min-height: 7em;
   }
   
   .footer {
-    background-color: #FFC30F;
+    background-color: $jean;
   }

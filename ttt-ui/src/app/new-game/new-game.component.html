@@ -5,9 +5,9 @@
       </div>
       <div class="col-md-8">
         <form class="text-center">
-            <input type="text" class="form-control" placeholder="Player One">
+            <input [(ngModel)]="gameService.game.attributes.players[0]" type="text" class="form-control" name="Player 1">
             <h1>VERSUS:</h1>
-            <input type="text" class="form-control" placeholder="Player Two">
+            <input [(ngModel)]="gameService.game.attributes.players[1]" type="text" class="form-control" name="Player 2">
         </form>
       </div>
       <div class="col-md-2">
@@ -18,13 +18,13 @@
 <div class="row">
   <div class="col-md-12 footer">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-sm-6 col-lg-8">
       </div>
-      <div class="col-md-2">
-        <button (click)="GoBack()" type="button" class="btn btn-primary btn-md">Cancel</button>
+      <div class="col-sm-3 col-lg-2">
+        <button (click)="GoBack()" type="button" class="btn btn-primary">Cancel</button>
       </div>
-      <div class="col-md-2">
-        <button routerLink="/board" type="button" class="btn btn-primary btn-md">Start Game</button>
+      <div class="col-sm-3 col-lg-2">
+        <button routerLink="/board" type="button" class="btn btn-primary">Start Game</button>
       </div>
     </div>
   </div>

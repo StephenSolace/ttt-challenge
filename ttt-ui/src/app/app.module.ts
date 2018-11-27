@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule }    from '@angular/common/http';
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'new-game', component: NewGameComponent },
   { path: 'load-game', component: LoadGameComponent },
   { path: 'board', component: BoardComponent },
+  { path: 'board/:id', component: BoardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
@@ -28,7 +31,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

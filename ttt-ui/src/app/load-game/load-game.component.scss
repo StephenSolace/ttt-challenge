@@ -1,3 +1,4 @@
+@import  "../../styles.scss";
 
 table {
     margin-top: 10%;
@@ -5,9 +6,8 @@ table {
 
 tbody {
     font-family: Arial, Times, serif;
-    // font-weight: bold;
-    background-color: #581845;
-    color: #FFC30F;
+    background-color: $jean;
+    color: $babyBlue;
     font-size: .25em;
     min-height: 7em;
 }
@@ -15,8 +15,8 @@ tbody {
 thead {
     font-family: Arial, Times, serif;
     font-weight: bold;
-    background-color: #581845;
-    color: #FFC30F;
+    background-color: $heavyBlue;
+    color: $white;
     font-size: .35em;
     min-height: 7em;
 }

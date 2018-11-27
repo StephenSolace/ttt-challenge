@@ -40,8 +40,4 @@ export class GameService {
       return Math.floor(Math.random() * Math.floor(size)).toString();
   }
 
-  UpdatePlayer(index: number, name: string)
-  {
-    this.game.attributes.players[index] = name;
-  }
 }

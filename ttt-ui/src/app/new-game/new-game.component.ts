@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-new-game',
@@ -7,8 +8,7 @@ import {Location} from '@angular/common';
   styleUrls: ['./new-game.component.scss']
 })
 export class NewGameComponent implements OnInit {
-
-  constructor(private location: Location) { }
+  constructor(private location: Location, private gameService: GameService) { }
 
   GoBack() : void {
     this.location.back();

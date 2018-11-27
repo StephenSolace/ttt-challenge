@@ -1,44 +1,80 @@
-<div class="row">
-  <div class="col-md-12 center">
-    <div class="row">
-      <div class="col-md-1">
+<ng-container *ngIf="Winner == null">
+  <div class="row">
+    <div class="col-md-12 center">
+      <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-8">
+          <table class="table table-bordered board text-center">
+            <tbody>
+              <tr *ngFor="let row of Board; index as i">
+                <td *ngFor="let column of row; index as j">
+                  <div *ngIf="Board[i][j] == null" (click)="PlaceMove(i, j, currentPlayer)">
+                    <fa name="pastafarianism"></fa>
+                  </div>
+                  <div *ngIf="Board[i][j] != null">
+                    <fa [name]="icons[Board[i][j]]" style="font-size:.5em;"></fa>
+                  </div>
+                </td>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-3 players text-center">
+          <h3>Player One:</h3>
+          <h5>
+            <ng-container *ngIf="gameService.game.attributes.players[0] == gameService.game.attributes.players[currentPlayer]">
+              <fa name="arrow-right"></fa>
+            </ng-container>
+            {{gameService.game.attributes.players[0]}}</h5>
+          <h3>Player Two:</h3>
+          <h5>
+            <ng-container *ngIf="gameService.game.attributes.players[1] == gameService.game.attributes.players[currentPlayer]">
+              <fa name="arrow-right"></fa>
+            </ng-container>
+            {{gameService.game.attributes.players[1]}}</h5>
+        </div>
       </div>
-      <div class="col-md-8 board">
-        <div class="row">
-          <div class="col-md-4 border text-center">1</div>
-          <div class="col-md-4 border text-center">1</div>
-          <div class="col-md-4 border text-center">1</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 footer">
+      <div class="row">
+        <div class="col-sm-6 col-lg-8">
         </div>
-        <div class="row">
-          <div class="col-md-4 border text-center">2</div>
-          <div class="col-md-4 border text-center">2</div>
-          <div class="col-md-4 border text-center">2</div>
+        <div class="col-sm-3 col-lg-2">
+          <button routerLink="/home" type="button" class="btn btn-primary">Home</button>
         </div>
-        <div class="row">
-          <div class="col-md-4 border text-center">3</div>
-          <div class="col-md-4 border text-center">3</div>
-          <div class="col-md-4 border text-center">3</div>
+        <div class="col-sm-3 col-lg-2">
+          <button (click)="SaveGame()" type="button" class="btn btn-primary">Save Game</button>
         </div>
       </div>
-      <div class="col-md-3 players">
-        <h3>Player One: </h3>
+    </div>
+  </div>
+</ng-container>
 
-        <h3>Player Two: </h3>
+<ng-container *ngIf="Winner != null">
+  <div class="col-md-12 text-center">
+    <ng-container *ngIf="Winner >= 0">
+      <h1>Congratulations {{gameService.game.attributes.players[Winner]}}!</h1>
+      <h3>You have control of the planet!</h3>
+    </ng-container>
+    <ng-container *ngIf="Winner < 0">
+      <h1>Stalemate </h1>
+      <h4>The struggle for control rages on.</h4>
+    </ng-container>
+  </div>
+  <div class="row">
+    <div class="col-md-12 footer">
+      <div class="row">
+        <div class="col-sm-6 col-lg-8">
+        </div>
+        <div class="col-sm-3 col-lg-2">
+          <button routerLink="/home" type="button" class="btn btn-primary">Home</button>
+        </div>
+        <div class="col-sm-3 col-lg-2">
+          <button (click)="Rematch()" type="button" class="btn btn-primary">Rematch</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12 footer">
-    <div class="row">
-      <div class="col-md-8">
-      </div>
-      <div class="col-md-2">
-        <button routerLink="/home" type="button" class="btn btn-primary btn-md">Home</button>
-      </div>
-      <div class="col-md-2">
-        <button (click)="SaveGame()" type="button" class="btn btn-primary btn-md">Save Game</button>
-      </div>
-    </div>
-  </div>
-</div>
+</ng-container>

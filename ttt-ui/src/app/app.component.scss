@@ -1,10 +1,14 @@
 @import  "../styles.scss";
 
+body {
+  margin-top: 5%;
+}
+
 .header {
   font-family: Arial, Times, serif;
   font-weight: bold;
-  background-color: $cream;
-  color: #FFC30F;
+  background-color: $jean;
+  color: $babyBlue;
   font-size: 3em;
   // border-radius: 2em 2em 0em 0em;
 }
